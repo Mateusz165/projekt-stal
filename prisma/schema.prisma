@@ -1,0 +1,130 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model AdminUser {
+  id        Int      @id @default(autoincrement())
+  email     String   @unique
+  password  String
+  name      String
+  role      String   @default("admin")
+  createdAt DateTime @default(now())
+}
+
+model Product {
+  id          Int         @id @default(autoincrement())
+  slug        String      @unique
+  name        String
+  description String
+  price       Float
+  oldPrice    Float?
+  category    String
+  stock       Boolean     @default(true)
+  badge       String?
+  images      String      @default("[]")
+  rating      Float       @default(5.0)
+  reviewCount Int         @default(0)
+  published   Boolean     @default(true)
+  order       Int         @default(0)
+  createdAt   DateTime    @default(now())
+  updatedAt   DateTime    @updatedAt
+  orderItems  OrderItem[]
+}
+
+model Order {
+  id          Int         @id @default(autoincrement())
+  orderNumber String      @unique @default(cuid())
+  status      String      @default("pending")
+  total       Float
+  name        String
+  email       String
+  phone       String
+  address     String
+  city        String
+  zip         String
+  stripeId    String?
+  notes       String?
+  items       OrderItem[]
+  createdAt   DateTime    @default(now())
+  updatedAt   DateTime    @updatedAt
+}
+
+model OrderItem {
+  id        Int     @id @default(autoincrement())
+  quantity  Int
+  price     Float
+  orderId   Int
+  productId Int
+  order     Order   @relation(fields: [orderId], references: [id])
+  product   Product @relation(fields: [productId], references: [id])
+}
+
+model QuoteRequest {
+  id          Int      @id @default(autoincrement())
+  type        String
+  width       String
+  height      String
+  length      String?
+  location    String
+  description String?
+  name        String
+  phone       String
+  email       String
+  status      String   @default("new")
+  notes       String?
+  createdAt   DateTime @default(now())
+}
+
+model ContactMessage {
+  id        Int      @id @default(autoincrement())
+  name      String
+  email     String
+  phone     String?
+  subject   String
+  message   String
+  read      Boolean  @default(false)
+  notes     String?
+  createdAt DateTime @default(now())
+}
+
+model BlogPost {
+  id          Int       @id @default(autoincrement())
+  slug        String    @unique
+  title       String
+  excerpt     String
+  content     String
+  category    String
+  image       String
+  published   Boolean   @default(false)
+  publishedAt DateTime?
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+}
+
+model Project {
+  id        Int      @id @default(autoincrement())
+  title     String
+  category  String
+  location  String
+  year      Int
+  images    String   @default("[]")
+  featured  Boolean  @default(false)
+  order     Int      @default(0)
+  createdAt DateTime @default(now())
+}
+
+model Testimonial {
+  id        Int      @id @default(autoincrement())
+  name      String
+  location  String
+  rating    Int      @default(5)
+  text      String
+  project   String
+  published Boolean  @default(true)
+  createdAt DateTime @default(now())
+}
