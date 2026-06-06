@@ -10,19 +10,22 @@ const prisma = new PrismaClient({ adapter } as ConstructorParameters<typeof Pris
 async function main() {
   console.log("Seeding database...");
 
-  // Admin user
-  const passwordHash = await bcrypt.hash("admin123", 12);
+  // Admin user — email from ADMIN_EMAIL env var, fallback to default
+  const adminEmail = process.env.ADMIN_EMAIL ?? "admin@projekt-stal.pl";
+  const adminPassword = process.env.ADMIN_INITIAL_PASSWORD ?? "admin123";
+  const passwordHash = await bcrypt.hash(adminPassword, 12);
   await prisma.adminUser.upsert({
-    where: { email: "admin@projekt-stal.pl" },
+    where: { email: adminEmail },
     update: {},
     create: {
-      email: "admin@projekt-stal.pl",
+      email: adminEmail,
       password: passwordHash,
       name: "Administrator",
       role: "admin",
     },
   });
-  console.log("✓ Admin user: admin@projekt-stal.pl / admin123");
+  console.log(`✓ Admin user: ${adminEmail} / ${adminPassword}`);
+  console.log("  ⚠ Zmień hasło po pierwszym logowaniu!");
 
   // Products
   const products = [
