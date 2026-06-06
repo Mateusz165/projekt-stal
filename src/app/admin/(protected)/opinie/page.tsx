@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Plus, Star, Trash2 } from "lucide-react";
+import { Plus, Star, Trash2, Eye, EyeOff } from "lucide-react";
 import prisma from "@/lib/prisma";
 
 export const metadata: Metadata = { title: "Opinie" };
@@ -62,16 +62,27 @@ export default async function AdminTestimonialsPage() {
               <span className="text-zinc-600 text-xs">
                 {new Date(t.createdAt).toLocaleDateString("pl-PL", { day: "numeric", month: "long", year: "numeric" })}
               </span>
-              <form action={`/api/admin/testimonials?id=${t.id}`} method="POST">
-                <input type="hidden" name="_method" value="DELETE" />
-                <button
-                  type="submit"
-                  onClick={(e) => { if (!confirm(`Usuń opinię od "${t.name}"?`)) e.preventDefault(); }}
-                  className="p-1.5 bg-zinc-800 hover:bg-red-500/10 text-zinc-500 hover:text-red-400 rounded-lg transition-colors"
-                >
-                  <Trash2 size={13} />
-                </button>
-              </form>
+              <div className="flex items-center gap-1">
+                <form action={`/api/admin/testimonials/toggle?id=${t.id}`} method="POST">
+                  <button
+                    type="submit"
+                    title={t.published ? "Ukryj" : "Opublikuj"}
+                    className={`p-1.5 rounded-lg transition-colors ${t.published ? "bg-green-500/10 text-green-400 hover:bg-zinc-800 hover:text-zinc-400" : "bg-zinc-800 text-zinc-500 hover:bg-green-500/10 hover:text-green-400"}`}
+                  >
+                    {t.published ? <Eye size={13} /> : <EyeOff size={13} />}
+                  </button>
+                </form>
+                <form action={`/api/admin/testimonials?id=${t.id}`} method="POST">
+                  <input type="hidden" name="_method" value="DELETE" />
+                  <button
+                    type="submit"
+                    onClick={(e) => { if (!confirm(`Usuń opinię od "${t.name}"?`)) e.preventDefault(); }}
+                    className="p-1.5 bg-zinc-800 hover:bg-red-500/10 text-zinc-500 hover:text-red-400 rounded-lg transition-colors"
+                  >
+                    <Trash2 size={13} />
+                  </button>
+                </form>
+              </div>
             </div>
           </div>
         ))}

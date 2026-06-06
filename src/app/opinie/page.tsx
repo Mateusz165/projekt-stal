@@ -1,11 +1,11 @@
 export const dynamic = "force-dynamic";
 
 import type { Metadata } from "next";
-import Link from "next/link";
-import { Star, Quote, ArrowRight, MessageSquare } from "lucide-react";
+import { Star, Quote, MessageSquare } from "lucide-react";
 import prisma from "@/lib/prisma";
 import { AnimatedSection, StaggerContainer, StaggerItem } from "@/components/ui/AnimatedSection";
 import CTASection from "@/components/home/CTASection";
+import TestimonialForm from "@/components/opinie/TestimonialForm";
 
 export const metadata: Metadata = {
   title: "Opinie klientów – Projekt-Stal Białystok",
@@ -166,26 +166,23 @@ export default async function OpiniePage() {
         </div>
       </section>
 
-      {/* CTA — leave a review */}
+      {/* Inline review form */}
       <section className="bg-zinc-950 pb-20">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 text-center">
+        <div className="max-w-2xl mx-auto px-4 sm:px-6">
           <AnimatedSection>
-            <div className="bg-gradient-to-br from-amber-500/5 to-amber-600/5 border border-amber-500/10 rounded-3xl p-10">
-              <div className="w-12 h-12 rounded-2xl bg-amber-500/10 flex items-center justify-center mx-auto mb-4">
-                <Star size={24} className="text-amber-400 fill-amber-400" />
+            <div className="bg-gradient-to-br from-amber-500/5 to-amber-600/5 border border-amber-500/10 rounded-3xl p-8 md:p-10">
+              <div className="text-center mb-8">
+                <div className="w-12 h-12 rounded-2xl bg-amber-500/10 flex items-center justify-center mx-auto mb-4">
+                  <Star size={24} className="text-amber-400 fill-amber-400" />
+                </div>
+                <h2 className="text-2xl font-black text-white mb-2" style={{ fontFamily: "var(--font-outfit)" }}>
+                  Podziel się opinią
+                </h2>
+                <p className="text-zinc-400 text-sm leading-relaxed">
+                  Jesteś naszym klientem? Twój feedback pomaga nam się rozwijać i buduje zaufanie przyszłych klientów.
+                </p>
               </div>
-              <h2 className="text-2xl font-black text-white mb-3" style={{ fontFamily: "var(--font-outfit)" }}>
-                Jesteś naszym klientem?
-              </h2>
-              <p className="text-zinc-400 mb-6 leading-relaxed">
-                Podziel się swoją opinią o realizacji. Twój feedback pomaga nam się rozwijać i buduje zaufanie przyszłych klientów.
-              </p>
-              <Link
-                href="/kontakt"
-                className="inline-flex items-center gap-2 bg-amber-500 hover:bg-amber-400 text-zinc-950 font-bold px-8 py-3.5 rounded-xl transition-all"
-              >
-                Napisz opinię <ArrowRight size={16} />
-              </Link>
+              <TestimonialForm />
             </div>
           </AnimatedSection>
         </div>
