@@ -1,36 +1,71 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Projekt-Stal — Mateusz Partyka
 
-## Getting Started
+Strona firmowa dla firmy metalurgicznej z Białegostoku. Schody stalowe, balustrady, ogrodzenia, bramy na wymiar.
 
-First, run the development server:
+## Stack
+
+- **Next.js 16** (App Router, Turbopack)
+- **Tailwind CSS v4** + **Framer Motion**
+- **Prisma v7** + **PostgreSQL** (Neon)
+- **Stripe** — płatności BLIK / Przelewy24 / karta
+- **Vercel Blob** — przechowywanie zdjęć
+- **Nodemailer** — formularze kontaktowe
+
+## Uruchomienie lokalne
 
 ```bash
+npm install --legacy-peer-deps
+
+# Skopiuj plik z env i wypełnij wartości
+cp .env.example .env
+
+# Wygeneruj klienta Prisma i utwórz tabele
+npx prisma generate
+npm run db:push
+
+# (opcjonalnie) Seed bazy danych
+npx tsx prisma/seed.ts
+
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Zmienne środowiskowe
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Patrz `.env.example`.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Skrypty
 
-## Learn More
+| Komenda | Opis |
+|---|---|
+| `npm run dev` | Dev server (localhost:3000) |
+| `npm run build` | Produkcyjny build |
+| `npm run db:push` | Synchronizacja schematu z bazą |
+| `npm run db:migrate` | Uruchomienie migracji |
 
-To learn more about Next.js, take a look at the following resources:
+## Struktura
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```
+src/
+  app/
+    (public pages)         — /, /o-firmie, /oferta/*, /realizacje, /sklep, /blog, /kontakt
+    admin/(protected)/     — panel admina (auth cookie)
+    api/                   — REST endpoints + Stripe webhook
+  components/
+    layout/                — Header, Footer
+    home/                  — sekcje strony głównej
+    admin/                 — ImageUploader, AdminTable
+    shop/                  — CartDrawer
+  hooks/useCart.ts         — koszyk (localStorage)
+  lib/                     — prisma, auth, email, utils
+prisma/
+  schema.prisma
+  seed.ts
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Deploy (Vercel + Neon)
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. Utwórz bazę na [neon.tech](https://neon.tech) i skopiuj Connection String
+2. Wypchnij kod na GitHub
+3. Importuj projekt na [vercel.com](https://vercel.com)
+4. Ustaw wszystkie zmienne z `.env.example` w Vercel → Settings → Environment Variables
+5. Po pierwszym deployu: skonfiguruj Stripe Webhook na `https://twoja-domena.pl/api/webhooks/stripe`
