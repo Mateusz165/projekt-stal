@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 import {
   LayoutDashboard, Images, FileText, ShoppingBag,
   MessageSquare, Star, ClipboardList, Package,
-  ChevronRight,
+  ChevronRight, UserCog,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -67,11 +67,22 @@ export default function AdminSidebar() {
       </nav>
 
       {/* Footer */}
-      <div className="p-4 border-t border-zinc-800">
+      <div className="p-4 border-t border-zinc-800 space-y-2">
+        <Link
+          href="/admin/profil"
+          className={cn(
+            "flex items-center gap-2 text-xs transition-colors px-2 py-1.5 rounded-lg",
+            pathname === "/admin/profil"
+              ? "text-amber-400 bg-amber-500/10"
+              : "text-zinc-500 hover:text-zinc-300 hover:bg-zinc-800"
+          )}
+        >
+          <UserCog size={14} /> Zmień hasło
+        </Link>
         <Link
           href="/"
           target="_blank"
-          className="flex items-center gap-2 text-zinc-500 hover:text-zinc-300 text-xs transition-colors"
+          className="flex items-center gap-2 text-zinc-500 hover:text-zinc-300 text-xs transition-colors px-2 py-1.5"
         >
           <span>→</span> Podgląd strony
         </Link>
