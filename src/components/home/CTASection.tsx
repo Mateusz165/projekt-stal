@@ -13,7 +13,7 @@ export default function CTASection() {
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: `url('https://images.unsplash.com/photo-1600607687939-ce8a6d8fbe5e?w=1600&q=80')`,
+            backgroundImage: `url('/images/schody-rad1.jpg')`,
           }}
         />
         <div className="absolute inset-0 bg-gradient-to-r from-zinc-950 via-zinc-950/95 to-zinc-950/80" />

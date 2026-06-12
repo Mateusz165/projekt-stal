@@ -13,25 +13,25 @@ export const metadata: Metadata = {
 const types = [
   {
     title: "Balustrady stalowe",
-    image: "https://images.unsplash.com/photo-1558618047-3c8c76ca2478?w=600&q=80",
+    image: "/images/balustrada-niecki1.jpg",
     features: ["Profil stalowy lakierowany", "Kolor RAL na życzenie", "Proszek lub mokry lakier"],
     desc: "Klasyczne balustrady ze stali konstrukcyjnej. Lakierowane proszkowo w dowolnym kolorze RAL.",
   },
   {
     title: "Balustrady nierdzewne",
-    image: "https://images.unsplash.com/photo-1631679706909-1844bbd07221?w=600&q=80",
+    image: "/images/balustrada-jurowce1.jpg",
     features: ["Stal AISI 304 lub 316", "Polerowana lub satynowa", "Odporność na korozję"],
     desc: "Nowoczesne balustrady ze stali nierdzewnej — trwałe, odporne na korozję i łatwe w czyszczeniu.",
   },
   {
     title: "Balustrady szklane",
-    image: "https://images.unsplash.com/photo-1600047509358-9dc75507daeb?w=600&q=80",
+    image: "/images/balustrada-na-zloto1.jpg",
     features: ["Szkło hartowane 8-12mm", "Uchwyty punktowe lub listwowe", "Opcja frameless"],
     desc: "Transparentne balustrady szklane — pełne, pół-pełne lub z punktowymi mocowaniami szkła.",
   },
   {
     title: "Balustrady kombinowane",
-    image: "https://images.unsplash.com/photo-1600585154363-67eb9e2e2099?w=600&q=80",
+    image: "/images/balustrada-schody-dobrzyniewo1.jpg",
     features: ["Stal + szkło", "Stal + drewno", "Nierdzewna + szkło"],
     desc: "Połączenie materiałów dla unikalnego efektu estetycznego — stal z drewnem lub szkłem.",
   },

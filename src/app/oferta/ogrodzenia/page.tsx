@@ -10,10 +10,10 @@ export const metadata: Metadata = {
 };
 
 const types = [
-  { title: "Ogrodzenia nowoczesne", image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80", features: ["Minimalistyczny design", "Profile pionowe / poziome", "Kolor RAL"], desc: "Nowoczesne ogrodzenia z profili stalowych — minimalistyczne, trwałe i estetyczne." },
-  { title: "Ogrodzenia panelowe", image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=600&q=80", features: ["Panel ocynkowany", "Szybki montaż", "Ekonomiczne"], desc: "Popularne ogrodzenia panelowe — tanie, trwałe i łatwe w montażu." },
-  { title: "Ogrodzenia palisadowe", image: "https://images.unsplash.com/photo-1513467535987-fd81bc7d62f8?w=600&q=80", features: ["Pionowe sztachety", "Ostro zakończone", "Efekt designerski"], desc: "Palisadowe ogrodzenia stalowe — eleganckie i bezpieczne." },
-  { title: "Ogrodzenia na zamówienie", image: "https://images.unsplash.com/photo-1486006920555-c77dcf18193c?w=600&q=80", features: ["Indywidualny projekt", "Dowolne wzory", "Laser / CNC"], desc: "Unikalne ogrodzenia z wyciętymi wzorami, laserowo lub CNC, na indywidualne zamówienie." },
+  { title: "Ogrodzenia nowoczesne", image: "/images/ogrodzenie-dobrzyniewo1.jpg", features: ["Minimalistyczny design", "Profile pionowe / poziome", "Kolor RAL"], desc: "Nowoczesne ogrodzenia z profili stalowych — minimalistyczne, trwałe i estetyczne." },
+  { title: "Ogrodzenia panelowe", image: "/images/ogrodzenie-dobrzyniewo2.jpg", features: ["Panel ocynkowany", "Szybki montaż", "Ekonomiczne"], desc: "Popularne ogrodzenia panelowe — tanie, trwałe i łatwe w montażu." },
+  { title: "Ogrodzenia palisadowe", image: "/images/brama-nowodworce1.jpg", features: ["Pionowe sztachety", "Ostro zakończone", "Efekt designerski"], desc: "Palisadowe ogrodzenia stalowe — eleganckie i bezpieczne." },
+  { title: "Ogrodzenia na zamówienie", image: "/images/brama-nowodworce2.jpg", features: ["Indywidualny projekt", "Dowolne wzory", "Laser / CNC"], desc: "Unikalne ogrodzenia z wyciętymi wzorami, laserowo lub CNC, na indywidualne zamówienie." },
 ];
 
 export default function FencesPage() {

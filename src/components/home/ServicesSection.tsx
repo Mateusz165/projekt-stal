@@ -13,7 +13,7 @@ const services = [
     description:
       "Schody stalowe to nasza specjalność. Projektujemy i wykonujemy schody dywanowe, wspornikowe, zabiegowe i loftowe.",
     href: "/oferta/schody",
-    image: "https://images.unsplash.com/photo-1600585154363-67eb9e2e2099?w=600&q=80",
+    image: "/images/schody-kopisk1.jpg",
     accent: "from-amber-500/20 to-transparent",
   },
   {
@@ -23,7 +23,7 @@ const services = [
     description:
       "Eleganckie balustrady ze stali nierdzewnej, z wypełnieniem szklanym lub stalowymi prętami.",
     href: "/oferta/balustrady",
-    image: "https://images.unsplash.com/photo-1631679706909-1844bbd07221?w=600&q=80",
+    image: "/images/balustrada-harfa1.jpg",
     accent: "from-zinc-500/20 to-transparent",
   },
   {
@@ -33,7 +33,7 @@ const services = [
     description:
       "Nowoczesne ogrodzenia metalowe — panelowe, palisadowe i na indywidualne zamówienie.",
     href: "/oferta/ogrodzenia",
-    image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80",
+    image: "/images/ogrodzenie-dobrzyniewo1.jpg",
     accent: "from-blue-500/10 to-transparent",
   },
   {
@@ -43,7 +43,7 @@ const services = [
     description:
       "Bramy garażowe, przesuwne i skrzydłowe z napędem automatycznym lub ręczne.",
     href: "/oferta/bramy",
-    image: "https://images.unsplash.com/photo-1513467535987-fd81bc7d62f8?w=600&q=80",
+    image: "/images/brama-nowodworce1.jpg",
     accent: "from-amber-500/15 to-transparent",
   },
   {
@@ -53,7 +53,7 @@ const services = [
     description:
       "Tarasy, pergole i zadaszenia stalowe dostosowane do każdej architektury.",
     href: "/oferta/tarasy",
-    image: "https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=600&q=80",
+    image: "/images/garaz-wiedenska1.jpg",
     accent: "from-zinc-400/10 to-transparent",
   },
   {
@@ -63,7 +63,7 @@ const services = [
     description:
       "Garaże stalowe wolnostojące i blaszane na indywidualne zamówienie — trwałe i estetyczne.",
     href: "/oferta/garaze",
-    image: "https://images.unsplash.com/photo-1486006920555-c77dcf18193c?w=600&q=80",
+    image: "/images/garaz-wiedenska2.jpg",
     accent: "from-amber-500/10 to-transparent",
   },
 ];

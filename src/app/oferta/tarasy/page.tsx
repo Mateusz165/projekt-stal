@@ -10,10 +10,10 @@ export const metadata: Metadata = {
 };
 
 const types = [
-  { title: "Tarasy stalowe", image: "https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=600&q=80", desc: "Tarasy na konstrukcji stalowej — trwałe, odporne na warunki atmosferyczne." },
-  { title: "Pergole i zadaszenia", image: "https://images.unsplash.com/photo-1600047509358-9dc75507daeb?w=600&q=80", desc: "Pergole stalowe z dachem płaskim lub łukowym, z wypełnieniem szklanym lub poliwęglanowym." },
-  { title: "Zadaszenia szklane", image: "https://images.unsplash.com/photo-1493246507139-91e8fad9978e?w=600&q=80", desc: "Eleganckie zadaszenia ze szkłem hartowanym — przepuszczają światło i chronią przed deszczem." },
-  { title: "Wiaty i carporty", image: "https://images.unsplash.com/photo-1486006920555-c77dcf18193c?w=600&q=80", desc: "Wiaty na samochody i narzędzia — ekonomiczne i trwałe rozwiązania stalowe." },
+  { title: "Tarasy stalowe", image: "/images/garaz-wiedenska1.jpg", desc: "Tarasy na konstrukcji stalowej — trwałe, odporne na warunki atmosferyczne." },
+  { title: "Pergole i zadaszenia", image: "/images/garaz-wiedenska2.jpg", desc: "Pergole stalowe z dachem płaskim lub łukowym, z wypełnieniem szklanym lub poliwęglanowym." },
+  { title: "Zadaszenia szklane", image: "/images/scianka-loft1.jpg", desc: "Eleganckie zadaszenia ze szkłem hartowanym — przepuszczają światło i chronią przed deszczem." },
+  { title: "Wiaty i carporty", image: "/images/scianka-loft2.jpg", desc: "Wiaty na samochody i narzędzia — ekonomiczne i trwałe rozwiązania stalowe." },
 ];
 
 export default function TarasyPage() {

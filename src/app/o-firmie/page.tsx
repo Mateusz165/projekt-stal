@@ -60,7 +60,7 @@ export default function AboutPage() {
           <div
             className="absolute inset-0 bg-cover bg-center opacity-20"
             style={{
-              backgroundImage: `url('https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=800&q=80')`,
+              backgroundImage: `url('/images/schody-kopisk3.jpg')`,
             }}
           />
           <div className="absolute inset-0 bg-gradient-to-l from-transparent to-zinc-950" />
@@ -96,7 +96,7 @@ export default function AboutPage() {
                 <div
                   className="absolute inset-0 bg-cover bg-center"
                   style={{
-                    backgroundImage: `url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80')`,
+                    backgroundImage: `url('/images/schody-i-granit1.jpg')`,
                   }}
                 />
               </div>

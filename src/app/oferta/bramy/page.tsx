@@ -10,10 +10,10 @@ export const metadata: Metadata = {
 };
 
 const types = [
-  { title: "Bramy garażowe", image: "https://images.unsplash.com/photo-1513467535987-fd81bc7d62f8?w=600&q=80", features: ["Segmentowe lub uchylne", "Napęd automatyczny", "Izolacja termiczna"], desc: "Nowoczesne bramy garażowe segmentowe i uchylne — z napędem i bez." },
-  { title: "Bramy przesuwne", image: "https://images.unsplash.com/photo-1486006920555-c77dcf18193c?w=600&q=80", features: ["Otwieranie boczne", "Automatyka 24V", "Karta / pilot"], desc: "Bramy przesuwne z napędem automatycznym — ekonomiczne i trwałe." },
-  { title: "Bramy skrzydłowe", image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80", features: ["2 skrzydła", "Z furtkę lub bez", "Klasyczne lub modern"], desc: "Tradycyjne bramy skrzydłowe w nowoczesnym wydaniu — klasyka i elegancja." },
-  { title: "Automatyka do bram", image: "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=600&q=80", features: ["Sterowanie pilotem", "App na telefon", "Czujniki bezpieczeństwa"], desc: "Automatyzacja istniejących bram — montaż siłowników i systemów sterowania." },
+  { title: "Bramy garażowe", image: "/images/brama-nowodworce1.jpg", features: ["Segmentowe lub uchylne", "Napęd automatyczny", "Izolacja termiczna"], desc: "Nowoczesne bramy garażowe segmentowe i uchylne — z napędem i bez." },
+  { title: "Bramy przesuwne", image: "/images/brama-nowodworce2.jpg", features: ["Otwieranie boczne", "Automatyka 24V", "Karta / pilot"], desc: "Bramy przesuwne z napędem automatycznym — ekonomiczne i trwałe." },
+  { title: "Bramy skrzydłowe", image: "/images/brama-nowodworce3.jpg", features: ["2 skrzydła", "Z furtkę lub bez", "Klasyczne lub modern"], desc: "Tradycyjne bramy skrzydłowe w nowoczesnym wydaniu — klasyka i elegancja." },
+  { title: "Automatyka do bram", image: "/images/garaz-wiedenska1.jpg", features: ["Sterowanie pilotem", "App na telefon", "Czujniki bezpieczeństwa"], desc: "Automatyzacja istniejących bram — montaż siłowników i systemów sterowania." },
 ];
 
 export default function GatesPage() {

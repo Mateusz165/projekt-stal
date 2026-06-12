@@ -13,31 +13,31 @@ export const metadata: Metadata = {
 const types = [
   {
     title: "Schody loftowe",
-    image: "https://images.unsplash.com/photo-1600585154363-67eb9e2e2099?w=600&q=80",
+    image: "/images/schody-j1.jpg",
     desc: "Industrialny charakter połączony z nowoczesnym designem. Stal surowa lub malowana, stopnie z drewna lub blachy.",
     features: ["Stal + drewno dębowe", "Stal + blacha ryflowana", "Czarny mat lub kolor RAL"],
   },
   {
-    title: "Schody wspornikowe",
-    image: "https://images.unsplash.com/photo-1600607687939-ce8a6d8fbe5e?w=600&q=80",
-    desc: "Minimalistyczne schody bez widocznej konstrukcji — stopnie zamocowane bezpośrednio w ścianie.",
-    features: ["Efekt unoszenia", "Stal + drewno lub beton", "Idealne do wnętrz premium"],
+    title: "Schody zabiegowe",
+    image: "/images/schody-rad1.jpg",
+    desc: "Schody zabiegowe łączą biegi pod kątem z wachlarzowymi stopniami w narożniku — eleganckie i funkcjonalne.",
+    features: ["Wachlarzowe stopnie narożne", "Stal + drewno lub beton", "Optymalne wykorzystanie przestrzeni"],
   },
   {
     title: "Schody dywanowe",
-    image: "https://images.unsplash.com/photo-1631679706909-1844bbd07221?w=600&q=80",
-    desc: "Eleganckie schody z grubą blachą giętą — minimalistyczna forma, maksymalna trwałość.",
-    features: ["Blacha stalowa 6-10mm", "Lakierowanie proszkowe", "Dowolna konfiguracja"],
+    image: "/images/schody-dywanowe.png",
+    desc: "Schody dywanowe wykonane z giętej blachy stalowej — minimalistyczna forma, brak widocznych podstopnic.",
+    features: ["Blacha stalowa 6-10mm", "Lakierowanie proszkowe", "Efekt unoszącego się dywanu"],
   },
   {
-    title: "Schody zabiegowe",
-    image: "https://images.unsplash.com/photo-1604014236011-1bfcae40c2c0?w=600&q=80",
-    desc: "Spiralne lub zabiegowe — idealne gdy liczy się przestrzeń. Estetyczne i funkcjonalne.",
-    features: ["Konstrukcja stalowa", "Stopnie drewniane lub stalowe", "Na małe przestrzenie"],
+    title: "Schody z podestem płaskim",
+    image: "/images/schody-radzymin-2p1.jpg",
+    desc: "Schody z poziomym podestem między biegami — komfortowe i idealne do dużych przestrzeni i wysokich kondygnacji.",
+    features: ["Podest poziomy między biegami", "Konstrukcja stalowa lub mieszana", "Dowolna konfiguracja kątów"],
   },
   {
     title: "Schody na konstrukcji",
-    image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80",
+    image: "/images/schody-i-granit1.jpg",
     desc: "Solidna konstrukcja z profili stalowych jako fundament dla dowolnych stopni.",
     features: ["Profile stalowe HEB/IPE", "Spawanie certyfikowane", "Duże obciążenia"],
   },
@@ -59,7 +59,7 @@ export default function StairsPage() {
           <div
             className="absolute inset-0 bg-cover bg-center opacity-15"
             style={{
-              backgroundImage: `url('https://images.unsplash.com/photo-1600585154363-67eb9e2e2099?w=1600&q=80')`,
+              backgroundImage: `url('/images/schody-kopisk1.jpg')`,
             }}
           />
           <div className="absolute inset-0 bg-gradient-to-r from-zinc-950 to-zinc-950/60" />
