@@ -8,10 +8,13 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Send, CheckCircle, ChevronDown } from "lucide-react";
 import { AnimatedSection } from "@/components/ui/AnimatedSection";
 import { COMPANY } from "@/lib/utils";
-import StairShapePicker, {
+import StairShapePicker from "@/components/kalkulator/StairShapePicker";
+import {
   type StairShapeId,
   STAIR_SHAPES,
-} from "@/components/kalkulator/StairShapePicker";
+  BASE_PRICE_PER_M2,
+  ESTIMATE_MARGIN,
+} from "@/config/pricing";
 
 const schema = z.object({
   type: z.string().min(1, "Wybierz rodzaj realizacji"),
@@ -38,9 +41,6 @@ const realizationTypes = [
   { value: "inne",       label: "Inne / Konstrukcja na wymiar" },
 ];
 
-// base price per m² (PLN), shape multipliers applied on top
-const BASE_PRICE_PER_M2 = 950;
-
 function calcEstimate(
   width: string,
   height: string,
@@ -49,11 +49,10 @@ function calcEstimate(
   const w = parseFloat(width);
   const h = parseFloat(height);
   if (!w || !h || w <= 0 || h <= 0) return null;
-  const area = w * h;
-  const mid = area * BASE_PRICE_PER_M2 * shapeMultiplier;
+  const mid = w * h * BASE_PRICE_PER_M2 * shapeMultiplier;
   return {
-    low:  Math.round((mid * 0.85) / 100) * 100,
-    high: Math.round((mid * 1.15) / 100) * 100,
+    low:  Math.round((mid * (1 - ESTIMATE_MARGIN)) / 100) * 100,
+    high: Math.round((mid * (1 + ESTIMATE_MARGIN)) / 100) * 100,
   };
 }
 
